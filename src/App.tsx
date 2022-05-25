@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ FunctionComponent }from 'react';
+import TableCard from './component/TableCard';
+import Table from './component/Table';
+import NavBar from './component/NavBar'
+import Footer from './component/Footer';
+import SideBar from './component/SideBar';
 
-function App() {
+
+const App: FunctionComponent = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <NavBar/>
+        <div id="layoutSidenav">
+             <SideBar/>
+             <div id="layoutSidenav_content">
+                  <main>
+                  <TableCard>
+                    <Table/>
+                  </TableCard>
+                  </main>
+                  <Footer/>
+              </div>
+        </div>
     </div>
-  );
-}
+   
 
+
+  )
+}
 export default App;
